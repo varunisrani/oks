@@ -17,6 +17,12 @@ interface FontFamilyPickerProps {
   userId: string;
 }
 
+// First, define an interface for the font object
+interface Font {
+  value: string;
+  label: string;
+}
+
 const FontFamilyPicker: React.FC<FontFamilyPickerProps> = ({
   attribute,
   currentFont,
@@ -75,21 +81,20 @@ const FontFamilyPicker: React.FC<FontFamilyPickerProps> = ({
             <CommandEmpty>No font family found.</CommandEmpty>
             {!isPaidUser && (
               <CommandGroup heading="Free Fonts">
-                {FREE_FONTS.map((font) => (
+                {FREE_FONTS.map((font: Font) => (
                   <CommandItem
-                    value={font}
-                    key={font}
-                    onSelect={() => handleAttributeChange(attribute, font)}
+                    value={font.value}
+                    key={font.value}
+                    onSelect={() => handleAttributeChange(attribute, font.value)}
                     className='hover:cursor-pointer'
-                    style={{ fontFamily: font }}
                   >
-                    {font}
                     <CheckIcon
                       className={cn(
-                        "ml-auto h-4 w-4",
-                        font === currentFont ? "opacity-100" : "opacity-0"
+                        'mr-2 h-4 w-4',
+                        currentFont === font.value ? 'opacity-100' : 'opacity-0'
                       )}
                     />
+                    <span style={{ fontFamily: font.value }}>{font.label}</span>
                   </CommandItem>
                 ))}
               </CommandGroup>
