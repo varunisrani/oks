@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
+import { Groq } from 'groq-sdk';
 import {
   Dialog,
   DialogContent,
