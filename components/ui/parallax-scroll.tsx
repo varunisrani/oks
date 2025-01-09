@@ -11,13 +11,12 @@ interface ImageItem {
   className?: string;
 }
 
-export const ParallaxScroll = ({
-  images,
-  className,
-}: {
+interface ParallaxScrollProps {
   images: ImageItem[];
   className?: string;
-}) => {
+}
+
+export function ParallaxScroll({ images, className }: ParallaxScrollProps) {
   const gridRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     target: gridRef,
@@ -93,4 +92,4 @@ export const ParallaxScroll = ({
       </div>
     </div>
   );
-};
+}
