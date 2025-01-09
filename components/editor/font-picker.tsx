@@ -100,24 +100,24 @@ const FontFamilyPicker: React.FC<FontFamilyPickerProps> = ({
               </CommandGroup>
             )}
             <CommandGroup heading={isPaidUser ? "All Fonts" : "Premium Fonts (Upgrade to Access)"}>
-              {(isPaidUser ? ALL_FONTS : ALL_FONTS.filter(f => !FREE_FONTS.includes(f))).map((font) => (
+              {(isPaidUser ? ALL_FONTS : ALL_FONTS.filter(f => !FREE_FONTS.includes(f))).map((font: Font) => (
                 <CommandItem
-                  value={font}
-                  key={font}
-                  onSelect={() => isPaidUser && handleAttributeChange(attribute, font)}
+                  value={font.value}
+                  key={font.value}
+                  onSelect={() => isPaidUser && handleAttributeChange(attribute, font.value)}
                   className={cn(
                     'hover:cursor-pointer',
                     !isPaidUser && 'opacity-50 hover:cursor-not-allowed'
                   )}
-                  style={{ fontFamily: font }}
+                  style={{ fontFamily: font.value }}
                 >
-                  {font}
+                  <span style={{ fontFamily: font.value }}>{font.label}</span>
                   {!isPaidUser && <LockClosedIcon className="ml-auto h-4 w-4" />}
                   {isPaidUser && (
                     <CheckIcon
                       className={cn(
                         "ml-auto h-4 w-4",
-                        font === currentFont ? "opacity-100" : "opacity-0"
+                        font.value === currentFont ? "opacity-100" : "opacity-0"
                       )}
                     />
                   )}
