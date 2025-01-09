@@ -76,27 +76,6 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full py-20 lg:py-24 bg-white dark:bg-black">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-2xl lg:text-4xl font-bold mb-6">Featured On</h2>
-                        <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-                            Recognized by the community
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-6">
-                        <a href="https://www.producthunt.com/posts/text-behind-image" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
-                            <img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=494264&theme=light&period=daily" alt="Text Behind Image on Product Hunt" width="250" height="54" />
-                        </a>
-                        <a href="https://www.producthunt.com/posts/text-behind-image" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
-                            <img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=494264&theme=light&period=monthly&topic_id=164" alt="Text Behind Image on Product Hunt" width="250" height="54" />
-                        </a>
-                        <a href="https://www.producthunt.com/posts/text-behind-image" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
-                            <img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=494264&theme=light&period=monthly&topic_id=44" alt="Text Behind Image on Product Hunt" width="250" height="54" />
-                        </a>
-                    </div>
-                </div>
-            </section>
 
             <div className="h-16 lg:h-24"></div>
         </div>
