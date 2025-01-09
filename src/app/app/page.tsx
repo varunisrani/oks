@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { Groq } from 'groq-sdk';
+import type { Groq } from 'groq-sdk';
 import {
   Dialog,
   DialogContent,
@@ -11,13 +11,19 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 
-// ... other imports
+let groq: Groq;
 
-const groqApiKey = process.env.NEXT_PUBLIC_GROQ_API_KEY || process.env.GROQ_API_KEY;
-
-const groq = new Groq({
-  apiKey: groqApiKey,
-});
+// Initialize Groq only on the client side
+if (typeof window !== 'undefined') {
+  const groqApiKey = process.env.NEXT_PUBLIC_GROQ_API_KEY;
+  
+  // Dynamic import to avoid server-side initialization
+  import('groq-sdk').then(({ Groq }) => {
+    groq = new Groq({
+      apiKey: groqApiKey,
+    });
+  });
+}
 
 const Page = () => {
     // ... existing state and refs
