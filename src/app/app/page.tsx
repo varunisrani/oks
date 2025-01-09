@@ -12,6 +12,12 @@ import { Button } from '@/components/ui/button';
 
 // ... other imports
 
+const groqApiKey = process.env.NEXT_PUBLIC_GROQ_API_KEY || process.env.GROQ_API_KEY;
+
+const groq = new Groq({
+  apiKey: groqApiKey,
+});
+
 const Page = () => {
     // ... existing state and refs
     const [isDialogOpen, setIsDialogOpen] = useState(false);
