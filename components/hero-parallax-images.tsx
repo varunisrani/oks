@@ -26,17 +26,57 @@ export function HeroParallaxImages() {
 
 const images: ImageItem[] = [
   {
-    src: image1.src,
-    alt: "Image 1 description",
-    width: image1.width,
-    height: image1.height
+    src: bear.src,
+    alt: "Bear image",
+    width: bear.width,
+    height: bear.height
   },
-  // ... repeat for other images
   {
-    src: image2.src,
-    alt: "Image 2 description",
-    width: image2.width,
-    height: image2.height
+    src: life.src,
+    alt: "Life image",
+    width: life.width,
+    height: life.height
   },
-  // ... and so on
+  {
+    src: wow.src,
+    alt: "Wow image",
+    width: wow.width,
+    height: wow.height
+  },
+  {
+    src: go.src,
+    alt: "Go image",
+    width: go.width,
+    height: go.height
+  },
+  {
+    src: cold.src,
+    alt: "Cold image",
+    width: cold.width,
+    height: cold.height
+  },
+  {
+    src: enjoy.src,
+    alt: "Enjoy image",
+    width: enjoy.width,
+    height: enjoy.height
+  },
+  {
+    src: nature.src,
+    alt: "Nature image",
+    width: nature.width,
+    height: nature.height
+  },
+  {
+    src: vie.src,
+    alt: "Vie image",
+    width: vie.width,
+    height: vie.height
+  },
+  {
+    src: snap.src,
+    alt: "Snap image",
+    width: snap.width,
+    height: snap.height
+  }
 ];  
